@@ -1,0 +1,36 @@
+* {
+  background-color: black;
+  margin: 0;
+}
+
+.demo {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* height: 100vh; */
+  padding: 10rem;
+  /* margin-top: ''; */
+}
+
+.logo {
+  /* scale: 0.2; */
+  /* margin-top:10 */
+  height: 40vh;
+}
+
+.grid {
+  height: 100vh;
+  padding: 20px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.square {
+  width: 8rem;
+  height: 8rem;
+  background-color: red;
+  margin: 10px;
+}
