@@ -44,11 +44,53 @@ tl.from(".name", {
 tl.from(
   ".nav-link",
   {
-    duration: 1,
+    duration: 0.5,
     y: -40,
     ease: "power4.Out",
     opacity: 0,
-    stagger: 0.8,
+    stagger: 0.4,
   }
   // "-=0.5"
 );
+// gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".boxa", {
+  scrollTrigger: {
+    trigger: "boxa",
+    toggleActions: "play pause reverse reset",
+    // markers: true,
+    scrub: true,
+  },
+  duration: 5,
+  rotation: 360,
+  x: 800,
+});
+
+let tl2 = gsap.timeline({
+  // scrollTrigger: {
+  //   trigger: ".econtainer",
+  //   pin: ".econtainer",
+  //   scrub: true,
+  // },
+});
+
+tl2
+  .from(".orange", {
+    x: "-100%",
+    duration: 2,
+  })
+  .from(".blue", {
+    x: "100%",
+    duration: 2,
+  })
+  .from(".green", { y: "-100%", duration: 2 });
+
+ScrollTrigger.create({
+  animation: tl2,
+  trigger: ".econtainer",
+  start: "top top",
+  end: "+=4000",
+  scrub: true,
+  pin: true,
+  markers: true,
+});
